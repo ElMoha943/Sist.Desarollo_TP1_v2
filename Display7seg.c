@@ -31,14 +31,14 @@ void ConmutarDigito(){ //ESTA FUNCION MUESTRA LOS NUMEROS EN LOS DIGITOS Y PREND
  PORTB=load;
 }
 
-void MostrarDisplay(unsigned int valor) //ESTA FUNCION DIVIDE EN CEN, DEC Y UNI VALOR ASIGNADO POR EL USUARIO Y LO CONVIERTE EN CODIGOS PARA USAR EN EL REGISTRO DE DESPLAZAMIENTO.
+void MostrarDisplay(unsigned int valor) //ESTA FUNCION DIVIDE EN CEN, DEC Y UNI VALOR ASIGNADO POR EL USUARIO Y LO CONVIERTE EN CODIGOS PARA USAR EN EL DIGITO.
 { 
  unsigned int cen, dec, uni; 
  cen=(valor/100); 
  dec=((valor/10)%10); //Separacion entre centena, descena y unidad.
  uni=(valor%10); 
  D1=Codificar(cen); 
- D2=Codificar(dec);  //Codificacion de numero a codigo para el registro.
+ D2=Codificar(dec);  //Codificacion de numero a codigo.
  D3=Codificar(uni); 
 } 
 unsigned int Codificar(int x) 
@@ -51,7 +51,7 @@ unsigned int Codificar(int x)
    caca=0b0111111; 
    break; 
   case 1: 
-   caca=0b0000110; //00000110
+   caca=0b0000110;
    break; 
   case 2: 
    caca=0b1011011;
